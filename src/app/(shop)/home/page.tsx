@@ -49,11 +49,11 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="shell space-y-9 py-5 sm:py-7">
+    <div className="shell space-y-11 py-6 sm:py-9">
       <BannerCarousel />
 
       {/* Shop by category */}
-      <section className="space-y-7">
+      <section className="space-y-9">
         {CATEGORY_GROUPS.map((g) => (
           <CategoryGroup key={g} group={g} />
         ))}

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PRODUCTS, productById, similarProducts, categoryBySlug } from "@/Mockdata";
-import Tile from "@/components/ui/Tile";
+import ProductImage from "@/components/ui/ProductImage";
+import { productImage } from "@/lib/productImages";
 import Price from "@/components/ui/Price";
 import AddToCart from "@/components/shared/AddToCart";
 import FavouriteButton from "@/components/shared/FavouriteButton";
@@ -56,11 +57,13 @@ export default async function ProductPage({
         {/* Gallery */}
         <div className="lg:sticky lg:top-24 lg:self-start">
           <div className="relative">
-            <Tile
+            <ProductImage
+              src={productImage(product.id)}
               emoji={product.emoji}
-              tint={product.tint}
-              size="xl"
+              tint="#f4f7f5"
+              alt={product.name}
               className="aspect-square w-full"
+              emojiSize="text-8xl"
             />
             {product.discountPct ? (
               <span className="absolute left-4 top-4 rounded-lg bg-brand-600 px-2.5 py-1 text-xs font-bold text-white">
@@ -72,13 +75,15 @@ export default async function ProductPage({
             </div>
           </div>
           <div className="mt-3 flex gap-3">
-            {[product.emoji, product.emoji, product.emoji, product.emoji].map((e, i) => (
-              <Tile
+            {[0, 1, 2, 3].map((i) => (
+              <ProductImage
                 key={i}
-                emoji={e}
-                tint={product.tint}
-                size="sm"
+                src={productImage(product.id)}
+                emoji={product.emoji}
+                tint="#f4f7f5"
+                alt={`${product.name} view ${i + 1}`}
                 className="h-16 w-16 ring-1 ring-line"
+                emojiSize="text-2xl"
               />
             ))}
           </div>

@@ -1,6 +1,6 @@
-import type { LegalSection } from "@/components/web-pages/LegalDoc";
+import type { PolicySection } from "@/components/web-pages/PolicyDoc";
 
-export const PRIVACY: LegalSection[] = [
+export const PRIVACY: PolicySection[] = [
   {
     heading: "Information We Collect",
     body: [
@@ -37,7 +37,7 @@ export const PRIVACY: LegalSection[] = [
   },
 ];
 
-export const TERMS: LegalSection[] = [
+export const TERMS: PolicySection[] = [
   { heading: "1. Acceptance of Terms", body: "By creating an account, browsing, placing orders, or using any feature of Chutkima, you agree to comply with these Terms & Conditions." },
   { heading: "2. About Chutkima", body: "Chutkima is an online grocery and daily essentials delivery platform that lets users browse products, place orders, make payments and receive deliveries from partnered stores." },
   { heading: "3. Account Registration", body: "Users must provide accurate, up-to-date information and are responsible for maintaining the confidentiality of their account credentials. Chutkima reserves the right to suspend or terminate accounts involved in fraudulent or abusive activities." },
@@ -51,7 +51,7 @@ export const TERMS: LegalSection[] = [
   { heading: "11. Changes to Terms", body: "We may update these Terms & Conditions from time to time. Continued use of the platform after updates constitutes acceptance of the revised terms." },
 ];
 
-export const REFUND: LegalSection[] = [
+export const REFUND: PolicySection[] = [
   {
     heading: "Eligible Refund Cases",
     body: [

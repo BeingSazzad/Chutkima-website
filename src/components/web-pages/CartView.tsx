@@ -17,7 +17,8 @@ import {
   applyPromo,
   clearPromo,
 } from "@/redux/slices/cartSlice";
-import Tile from "@/components/ui/Tile";
+import ProductImage from "@/components/ui/ProductImage";
+import { productImage } from "@/lib/productImages";
 import DeliveryFeeBar from "@/components/shared/DeliveryFeeBar";
 import ProductRail from "@/components/shared/ProductRail";
 import { bestSellers, STORE } from "@/Mockdata";
@@ -81,7 +82,14 @@ export default function CartView() {
               {items.map(({ product, qty }) => (
                 <li key={product.id} className="flex items-center gap-3 p-4">
                   <Link href={`/product/${product.id}`}>
-                    <Tile emoji={product.emoji} tint={product.tint} size="sm" className="h-16 w-16" />
+                    <ProductImage
+                      src={productImage(product.id)}
+                      emoji={product.emoji}
+                      tint="#f4f7f5"
+                      alt={product.name}
+                      className="h-16 w-16"
+                      emojiSize="text-2xl"
+                    />
                   </Link>
                   <div className="min-w-0 flex-1">
                     <Link

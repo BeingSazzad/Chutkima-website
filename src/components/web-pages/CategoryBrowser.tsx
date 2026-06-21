@@ -6,7 +6,8 @@ import { useRouter } from "next/navigation";
 import { Dropdown } from "antd";
 import { CATEGORIES, productsByCategory, categoryBySlug } from "@/Mockdata";
 import ProductGrid from "@/components/shared/ProductGrid";
-import Tile from "@/components/ui/Tile";
+import ProductImage from "@/components/ui/ProductImage";
+import { categoryImage } from "@/lib/productImages";
 import { cn } from "@/lib/utils";
 import type { SortKey } from "@/redux/slices/filterSlice";
 
@@ -87,7 +88,14 @@ export default function CategoryBrowser({ slug }: { slug: string }) {
                       : "border-transparent hover:bg-cream"
                   )}
                 >
-                  <Tile emoji={c.emoji} tint={c.tint} size="sm" className="h-12 w-12" />
+                  <ProductImage
+                    src={categoryImage(c.slug)}
+                    emoji={c.emoji}
+                    tint={c.tint}
+                    alt={c.name}
+                    className="h-12 w-12"
+                    emojiSize="text-xl"
+                  />
                   <span
                     className={cn(
                       "line-clamp-2 text-[10px] font-medium leading-tight",

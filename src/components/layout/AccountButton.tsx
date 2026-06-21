@@ -15,10 +15,10 @@ export default function AccountButton() {
     return (
       <Link
         href="/login"
-        className="hidden items-center gap-2 rounded-full border border-line bg-white px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-brand-300 hover:text-brand-700 sm:inline-flex"
+        className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-brand-300 hover:text-brand-700 sm:px-4"
       >
         <span>👤</span>
-        {isGuest ? "Sign in" : "Login"}
+        <span className="hidden sm:inline">{isGuest ? "Sign in" : "Login"}</span>
       </Link>
     );
   }
